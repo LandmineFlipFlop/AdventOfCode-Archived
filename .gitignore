@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+*.txt
+#to ignore data files from AoC
+
 # C extensions
 *.so
 
