@@ -10,5 +10,5 @@ count = 0
 
 
 
-print(Colors.green("count: " + str(count)))
+print(green("count: " + str(count)))
 timerstop(startTime)
