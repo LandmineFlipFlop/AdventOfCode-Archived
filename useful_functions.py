@@ -58,8 +58,6 @@ class Colors:
         return Colors.DARKCYAN + text + Colors.ENDC
     def magenta(text):
         return Colors.MAGENTA + text + Colors.ENDC
-    def black(text):
-        return Colors.BLACK + text + Colors.ENDC
     def grey(text):
         return Colors.GREY + text + Colors.ENDC
     def bold(text):
@@ -84,8 +82,6 @@ def yellow(text):
     return Colors.yellow(str(text))
 def magenta(text):
     return Colors.magenta(str(text))
-def black(text):
-    return Colors.black(str(text))
 def grey(text):
     return Colors.grey(str(text))
 def bold(text):
