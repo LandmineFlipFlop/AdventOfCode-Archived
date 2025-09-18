@@ -7,7 +7,7 @@ def clamp(value, minimum, maximum):
     return max(minimum, min(value, maximum))
 
 
-def checkletter(letter, startx, starty, array):
+def mapCheckLetter(letter, startx, starty, array):
 
     maxX = len(array[starty]) - 1
     maxY = len(array) - 1
