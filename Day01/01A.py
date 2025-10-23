@@ -1,5 +1,4 @@
 import sys, time, copy
-from ftplib import print_line
 
 sys.path.append("../useful_functions.py")
 from useful_functions import *
