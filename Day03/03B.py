@@ -9,24 +9,39 @@ startTime = time.time()
 
 houses = {(0,0):1}
 
-x = 0
-y = 0
+sx = 0
+sy = 0
+bx = 0
+by = 0
 
 i=0
 while i < len(line):
     if line[i] == '^':
-        y += 1
+        sy += 1
     elif line[i] == 'v':
-        y += -1
+        sy += -1
     elif line[i] == '>':
-        x += 1
+        sx += 1
     elif line[i] == '<':
-        x += -1
-    if (y,x) in houses:
-        houses[(y, x)] += 1
+        sx += -1
+    if (sy, sx) in houses:
+        houses[(sy, sx)] += 1
     else:
-        houses[(y, x)] = 1
+        houses[(sy, sx)] = 1
+    i += 1
 
+    if line[i] == '^':
+        by += 1
+    elif line[i] == 'v':
+        by += -1
+    elif line[i] == '>':
+        bx += 1
+    elif line[i] == '<':
+        bx += -1
+    if (by, bx) in houses:
+        houses[(by, bx)] += 1
+    else:
+        houses[(by, bx)] = 1
     i += 1
 
 print(green("count: " + str(len(houses))))
