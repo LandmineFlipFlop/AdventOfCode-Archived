@@ -255,3 +255,8 @@ def yellowreplace(map, charecter):
             else:
                 revised[len(revised) - 1].append(col)
     return revised
+
+def true():
+    return True
+def false():
+    return False
