@@ -1,16 +1,23 @@
 import sys, time, copy
+from ftplib import print_line
+
 sys.path.append("../useful_functions.py")
 from useful_functions import *
-with open ('01_data/test_data', 'r') as casefile:
-    lines = casefile.read().splitlines()
-# with open ('01_data/full_data', 'r') as casefile:
-#     lines = casefile.read().splitlines()
+# with open ('01_data/test_data', 'r') as casefile:
+#     line = casefile.read()
+with open ('01_data/full_data', 'r') as casefile:
+    line = casefile.read()
+
 startTime = time.time()
 count = 0
 
-
-
-
+i=0
+while i < len(line):
+    if line[i] == "(":
+        count += 1
+    else:
+        count += -1
+    i+= 1
 
 print(green("count: " + str(count)))
 timerstop(startTime)
