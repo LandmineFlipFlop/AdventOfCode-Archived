@@ -1,20 +1,21 @@
 import sys, time, copy
 sys.path.append("../useful_functions.py")
 from useful_functions import *
-with open ('06_data/test_data', 'r') as casefile:
-    lines = casefile.read().splitlines()
-# with open ('06_data/full_data', 'r') as casefile:
+# with open ('06_data/test_data', 'r') as casefile:
 #     lines = casefile.read().splitlines()
+with open ('06_data/full_data', 'r') as casefile:
+    lines = casefile.read().splitlines()
 startTime = time.time()
 count = 0
 
 grid=[]
+size = 1000
 
 i = 0
-while i < 1000:
+while i < size:
     i2 = 0
     grid.append([])
-    while i2 <= 999:
+    while i2 < size:
         grid[i].append(0)
         i2 += 1
     i += 1
@@ -36,7 +37,7 @@ for line in lines:
         while i <= coords[2]:
             i2 = coords[1]
             while i2 <= coords[3]:
-                grid[i][i2] = 1
+                grid[i][i2] = 0
                 i2 += 1
             i += 1
 
@@ -47,7 +48,7 @@ for line in lines:
         while i <= coords[2]:
             i2 = coords[1]
             while i2 <= coords[3]:
-                grid[i][i2] = 2
+                grid[i][i2] = 1
                 i2 += 1
             i += 1
 
@@ -69,14 +70,14 @@ for line in lines:
     i = 0
 
 i = 0
-while i < 1000:
+while i < size:
     i2 = 0
-    while i2 < 1000:
+    while i2 < size:
         count += grid[i][i2]
         i2 += 1
     i += 1
 
 # printmap(grid)
 
-print(  green("count: " + str( int(count/2) ))  )
+print(  green("count: " + str(count) )  )
 timerstop(startTime)
