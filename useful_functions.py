@@ -116,7 +116,7 @@ def iseven(num):
 
 def printmap(map):
     for row in map:
-        print("".join(row))
+        print("".join(str(row)))
 
 def bluemap(map):
     revised = []
