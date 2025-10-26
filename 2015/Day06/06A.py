@@ -1,5 +1,5 @@
 import sys, time, copy
-sys.path.append("../useful_functions.py")
+sys.path.append("../../useful_functions.py")
 from useful_functions import *
 # with open ('06_data/test_data', 'r') as casefile:
 #     lines = casefile.read().splitlines()
@@ -37,8 +37,7 @@ for line in lines:
         while i <= coords[2]:
             i2 = coords[1]
             while i2 <= coords[3]:
-                if grid[i][i2] > 0:
-                    grid[i][i2] += -1
+                grid[i][i2] = 0
                 i2 += 1
             i += 1
 
@@ -49,7 +48,7 @@ for line in lines:
         while i <= coords[2]:
             i2 = coords[1]
             while i2 <= coords[3]:
-                grid[i][i2] += 1
+                grid[i][i2] = 1
                 i2 += 1
             i += 1
 
@@ -60,7 +59,10 @@ for line in lines:
         while i <= coords[2]:
             i2 = coords[1]
             while i2 <= coords[3]:
-                grid[i][i2] += 2
+                if grid[i][i2] == 0:
+                    grid[i][i2] = 1
+                else:
+                    grid[i][i2] = 0
                 i2 += 1
             i += 1
 
