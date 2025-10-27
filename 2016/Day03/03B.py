@@ -36,9 +36,11 @@ tris.pop(0)
 for triangle in tris:
     sides = triangle
     sides.sort()
-    if sides[0] + sides[1] < sides[2]:
+    if sides[0] + sides[1] > sides[2]:
         count += 1
         print(green(sides))
+    else:
+        print(red(sides), yellow(sides[0] + sides[1]))
 
 
 
