@@ -7,17 +7,42 @@ with open ('03_data/p2_full_data', 'r') as casefile:
     lines = casefile.read().splitlines()
 startTime = time.time()
 count = 0
+fulllist = []
 
 for line in lines:
-    sides = line[1:len(line)].split(" ")
+    sides = line[1:len(line)].split(",")
     i = 0
     while i < len(sides):
         sides[i] = int(sides[i])
         i += 1
-    sides.sort()
-    if sides[0] + sides[1] > sides[2]:
-        count += 1
+    fulllist.append(sides)
 
+tris = []
+tri = []
+i = 0
+while i < 3:
+    i2 = 0
+    while i2 < len(fulllist):
+
+        if i2 % 3 == 0:
+            tris.append(tri)
+            tri = []
+        tri.append(fulllist[i2][i])
+        i2 += 1
+    i += 1
+tris.append(tri)
+tris.pop(0)
+
+for triangle in tris:
+    sides = triangle
+    sides.sort()
+    if sides[0] + sides[1] < sides[2]:
+        count += 1
+        print(green(sides))
+
+
+
+# printmap(tris)
 
 print(green("count: " + str(count)))
 timerstop(startTime)
